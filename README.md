@@ -1,4 +1,4 @@
-# ![Tweet360](https://raw.github.com/Dev-Dipesh/tweet360/gh-pages/media/logo.png)
+# ![Tweet360](https://raw.github.com/Dev-Dipesh/tweet360/master/media/logo.png)
 
 == Tweet360
 
