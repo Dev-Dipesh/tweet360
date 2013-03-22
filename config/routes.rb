@@ -3,6 +3,26 @@ Tweet360::Application.routes.draw do
 
   get "static_pages/help"
 
+  get "static_pages/about"
+
+  get "static_pages/blog"
+
+  get "static_pages/status"
+
+  get "static_pages/terms"
+
+  get "static_pages/privacy"
+
+  get "static_pages/advertisers"
+
+  get "static_pages/business"
+
+  get "static_pages/developers"
+
+  get "static_pages/resources"
+
+  get "static_pages/media"  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
