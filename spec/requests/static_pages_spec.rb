@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "Static pages" do
   subject {page}
+
 	describe "Home page" do
 		before {visit root_path}
 
@@ -85,5 +86,43 @@ describe "Static pages" do
 
 		it { should have_selector('h1', text: 'Media') }
 		it { should have_selector('title', text: full_title('Media')) }	
-	end									
+	end
+
+	it "should have the right links on the layout" do
+  	visit root_path
+  	
+  	click_link "About"
+  	page.should have_selector 'title', text: full_title('About Us')
+
+	click_link "Help"
+	page.should have_selector 'title', text: full_title('Help')
+
+	click_link "Developers"
+	page.should have_selector 'title', text: full_title('Developers')
+
+	click_link "Resources"
+	page.should have_selector 'title', text: full_title('Resources')
+
+	click_link "Media"
+	page.should have_selector 'title', text: full_title('Media')
+
+	click_link "Business"
+	page.should have_selector 'title', text: full_title('Business')
+
+	click_link "Blog"
+	page.should have_selector 'title', text: full_title('Blog')
+
+	click_link "Status"
+	page.should have_selector 'title', text: full_title('Status')
+
+	click_link "Terms"
+	page.should have_selector 'title', text: full_title('Terms')
+
+	click_link "Privacy"
+	page.should have_selector 'title', text: full_title('Privacy')
+
+	click_link "Advertisers"
+	page.should have_selector 'title', text: full_title('Advertisers')
+
+  end									
 end
