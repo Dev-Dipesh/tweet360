@@ -1,148 +1,89 @@
 require 'spec_helper'
 
 describe "Static pages" do
-  
+  subject {page}
 	describe "Home page" do
-		it "should have the h1 'Home'" do
-			visit '/static_pages/home'
-			page.should have_selector('h1', :text => 'Home')
-		end
+		before {visit root_path}
 
-		it "should have the right title" do
-			visit '/static_pages/home'
-			page.should have_selector('title', :text => "Tweet360 | Home")
-		end	
+		it { should have_selector('h1', text: 'Welcome to Tweet360') }
+		it { should have_selector('title', text: full_title('')) }
+		it { should_not have_selector 'title', text: '| Home' }
 	end
 	
 	describe "Help page" do
-		it "should have the h1 'Help'" do
-			visit '/static_pages/help'
-			page.should have_selector('h1', :text => 'Help')
-		end
+		before {visit help_path}
 
-		it "should have the right title" do
-			visit '/static_pages/help'
-			page.should have_selector('title', :text => "Tweet360 | Help")
-		end	
+		it { should have_selector('h1', text: 'Help') }
+		it { should have_selector('title', text: full_title('Help')) }
 	end
 	
 	describe "About page" do
-		it "should have the h1 'About Us'" do
-			visit '/static_pages/about'
-			page.should have_selector('h1', :text => 'About Us')
-		end
+		before {visit about_path}
 
-		it "should have the right title" do
-			visit '/static_pages/about'
-			page.should have_selector('title', :text => "Tweet360 | About Us")
-		end	
+		it { should have_selector('h1', text: 'About Us') }
+		it { should have_selector('title', text: full_title('About Us')) }
 	end
 	
 	describe "Blog page" do
-		it "should have the h1 'Blog'" do
-			visit '/static_pages/blog'
-			page.should have_selector('h1', :text => 'Blog')
-		end
+		before {visit blog_path}
 
-		it "should have the right title" do
-			visit '/static_pages/blog'
-			page.should have_selector('title', :text => "Tweet360 | Blog")
-		end	
+		it { should have_selector('h1', text: 'Blog') }
+		it { should have_selector('title', text: full_title('Blog')) }	
 	end
 	
 	describe "Status page" do
-		it "should have the h1 'Status'" do
-			visit '/static_pages/status'
-			page.should have_selector('h1', :text => 'Status')
-		end
+		before {visit status_path}
 
-		it "should have the right title" do
-			visit '/static_pages/status'
-			page.should have_selector('title', :text => "Tweet360 | Status")
-		end	
+		it { should have_selector('h1', text: 'Status') }
+		it { should have_selector('title', text: full_title('Status')) }	
 	end
 	
 	describe "Terms page" do
-		it "should have the h1 'Terms'" do
-			visit '/static_pages/terms'
-			page.should have_selector('h1', :text => 'Terms')
-		end
+		before {visit terms_path}
 
-		it "should have the right title" do
-			visit '/static_pages/terms'
-			page.should have_selector('title', :text => "Tweet360 | Terms")
-		end	
+		it { should have_selector('h1', text: 'Terms') }
+		it { should have_selector('title', text: full_title('Terms')) }	
 	end
 	
 	describe "Privacy page" do
-		it "should have the h1 'Privacy'" do
-			visit '/static_pages/privacy'
-			page.should have_selector('h1', :text => 'Privacy')
-		end
+		before {visit privacy_path}
 
-		it "should have the right title" do
-			visit '/static_pages/privacy'
-			page.should have_selector('title', :text => "Tweet360 | Privacy")
-		end	
+		it { should have_selector('h1', text: 'Privacy') }
+		it { should have_selector('title', text: full_title('Privacy')) }	
 	end
 	
 	describe "Advertisers page" do
-		it "should have the h1 'Advertisers'" do
-			visit '/static_pages/advertisers'
-			page.should have_selector('h1', :text => 'Advertisers')
-		end
+		before {visit advertisers_path}
 
-		it "should have the right title" do
-			visit '/static_pages/advertisers'
-			page.should have_selector('title', :text => "Tweet360 | Advertisers")
-		end	
+		it { should have_selector('h1', text: 'Advertisers') }
+		it { should have_selector('title', text: full_title('Advertisers')) }	
 	end
 	
 	describe "Business page" do
-		it "should have the h1 'Media'" do
-			visit '/static_pages/business'
-			page.should have_selector('h1', :text => 'Business')
-		end
+		before {visit business_path}
 
-		it "should have the right title" do
-			visit '/static_pages/business'
-			page.should have_selector('title', :text => "Tweet360 | Business")
-		end	
+		it { should have_selector('h1', text: 'Business') }
+		it { should have_selector('title', text: full_title('Business')) }	
 	end
 	
 	describe "Developers page" do
-		it "should have the h1 'Developers'" do
-			visit '/static_pages/developers'
-			page.should have_selector('h1', :text => 'Developers')
-		end
+		before {visit developers_path}
 
-		it "should have the right title" do
-			visit '/static_pages/developers'
-			page.should have_selector('title', :text => "Tweet360 | Developers")
-		end	
+		it { should have_selector('h1', text: 'Developers') }
+		it { should have_selector('title', text: full_title('Developers')) }	
 	end
 	
 	describe "Resources page" do
-		it "should have the h1 'Resources'" do
-			visit '/static_pages/resources'
-			page.should have_selector('h1', :text => 'Resources')
-		end
+		before {visit resources_path}
 
-		it "should have the right title" do
-			visit '/static_pages/resources'
-			page.should have_selector('title', :text => "Tweet360 | Resources")
-		end	
+		it { should have_selector('h1', text: 'Resources') }
+		it { should have_selector('title', text: full_title('Resources')) }	
 	end
 	
 	describe "Media page" do
-		it "should have the h1 'Media'" do
-			visit '/static_pages/media'
-			page.should have_selector('h1', :text => 'Media')
-		end
+		before {visit media_path}
 
-		it "should have the right title" do
-			visit '/static_pages/media'
-			page.should have_selector('title', :text => "Tweet360 | Media")
-		end	
+		it { should have_selector('h1', text: 'Media') }
+		it { should have_selector('title', text: full_title('Media')) }	
 	end									
 end

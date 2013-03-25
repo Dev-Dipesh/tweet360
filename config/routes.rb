@@ -1,27 +1,31 @@
 Tweet360::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/help"
+  root to: 'static_pages#home'
 
-  get "static_pages/about"
+  match '/signup', to: 'users#new'
 
-  get "static_pages/blog"
+  match '/help', to: 'static_pages#help'
 
-  get "static_pages/status"
+  match '/about', to: 'static_pages#about'
 
-  get "static_pages/terms"
+  match '/blog', to: 'static_pages#blog'
 
-  get "static_pages/privacy"
+  match '/status', to: 'static_pages#status'
 
-  get "static_pages/advertisers"
+  match '/terms', to: 'static_pages#terms'
 
-  get "static_pages/business"
+  match '/privacy', to: 'static_pages#privacy'
 
-  get "static_pages/developers"
+  match '/advertisers', to: 'static_pages#advertisers'
 
-  get "static_pages/resources"
+  match '/business', to: 'static_pages#business'
 
-  get "static_pages/media"  
+  match '/developers', to: 'static_pages#developers'
+
+  match '/resources', to: 'static_pages#resources'
+
+  match '/media', to: 'static_pages#media'  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
