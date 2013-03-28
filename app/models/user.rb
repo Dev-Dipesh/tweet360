@@ -10,6 +10,9 @@
 #
 
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic secure: true
+
   attr_accessible :email, :name, :password, :password_confirmation
   has_secure_password
 
